@@ -5,13 +5,13 @@
 </head>
 <body>
 <h1>To add a new link</h1><br>
-<form>
+<form action="{{url_for('add_link')}}" method="GET">
   Title:<br>
   <input type="text" name="title"><br>
   Link:<br>
   <input type="link" name="newlink">
   <br><br>
-  <input type="button" id="first" value="Submit" onClick="location.href='/'">
+  <input type="submit">
 </form>
 </body>
 </html>
