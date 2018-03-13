@@ -9,7 +9,13 @@ app.secret_key = 'T\xa0\x96W\x1cZ\x02\x81zZ\xf0\xbd\xe1"+\x05\x83\x1fc\xde]y>\xe
 
 @app.route('/')
 def main_page():
-    return render_template("index.html")
+    c, conn = connection()
+    c.execute("SELECT * FROM links");
+    links = c.fetchall()
+    c.close()
+    conn.close()
+    gc.collect()
+    return render_template("index.html",links=links)
 
 @app.route('/submit_link', methods=['POST','GET'])
 def submit_link():
