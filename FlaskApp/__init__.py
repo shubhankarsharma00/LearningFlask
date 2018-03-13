@@ -10,7 +10,7 @@ def main_page():
 @app.route('/submit_link', methods=['POST','GET'])
 def submit_link():
     if request.method == 'POST':
-        # database stuff
+        app.logger.debug(str([request.form['title'],request.form['newlink']]))        
         flash("Link Submitted!")
         return redirect(url_for("main_page"))
     else:
