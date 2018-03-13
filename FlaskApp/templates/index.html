@@ -17,5 +17,15 @@
 		<h1>Hi There!!</h1>
 		<p>Welcome to the New World of MaxEntropy</p><br>
 		<p>To add new link <a href="{{url_for('submit_link')}}">Click here</a></p>
+		{% with messages = get_flashed_messages() %}{% if messages %}
+		<div class="flash">
+			<!-- TODO fix indentation -->
+			<ul class=flashes>
+		    {% for message in messages %}
+			      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+		</div>
+		{% endif %}{% endwith %}
 	</body>
 </html>
