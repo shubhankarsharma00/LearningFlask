@@ -8,7 +8,7 @@
 <ol>
 	{% for id,title,link in links%}
 	<li>
-		<a href={{link}}>{{title}}</a> <a href="{{url_for('delete',id=id)}}">x</a>
+		<a href={{link}}>{{title}}</a> <a href="{{url_for('delete',id=id)}}" class="btn btn-secondary btn-sm">X</a>
 	</li>
 	{% endfor %}
 </ol>
