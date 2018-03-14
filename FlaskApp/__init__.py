@@ -35,6 +35,16 @@ def submit_link():
     else:
         return render_template("submit.html")
 
+@app.route('/delete_link/<int:id>')
+def delete(id):
+    c, conn = connection()
+    c.execute("DELETE FROM links where id=%s",(str(id),))
+    conn.commit()
+    flash("Deleted!")
+    c.close()
+    conn.close()
+    gc.collect()
+    return redirect(url_for("main_page"))
 
 if __name__ == '__main__':
     app.debug=True

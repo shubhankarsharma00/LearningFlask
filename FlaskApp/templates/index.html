@@ -6,9 +6,9 @@
 <p>To add new link <a href="{{url_for('submit_link')}}">Click here</a></p>
 
 <ol>
-	{% for link in links%}
+	{% for id,title,link in links%}
 	<li>
-		<a href={{link[2]}}>{{link[1]}}</a>
+		<a href={{link}}>{{title}}</a> <a href="{{url_for('delete',id=id)}}">x</a>
 	</li>
 	{% endfor %}
 </ol>
