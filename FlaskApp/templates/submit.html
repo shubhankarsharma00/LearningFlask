@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>new link</title>
-</head>
-<body>
+{% extends "layout.html" %}
+
+{% block content %}
+
 <h1>To add a new link</h1><br>
 <form method="POST">
   Title:<br>
@@ -13,5 +11,5 @@
   <br><br>
   <input type="submit">
 </form>
-</body>
-</html>
+
+{% endblock %}

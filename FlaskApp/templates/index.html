@@ -1,37 +1,16 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<title>MaxEntropy</title>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
-		</script>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-		<script src="{{url_for('static',filename='js/main.js')}}"
-		charset="utf-8"></script>
-		<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}"
-		type="text/css" media="screen" charset="utf-8">
-	</head>
-	<body>
-		<h1>Hi There!!</h1>
-		<p>Welcome to the New World of MaxEntropy</p><br>
-		<p>To add new link <a href="{{url_for('submit_link')}}">Click here</a></p>
-		{% with messages = get_flashed_messages() %}{% if messages %}
-		<div class="flash">
-			<ul class=flashes>
-			{% for message in messages %}
-				<li>{{ message }}</li>
-			{% endfor %}
-		    </ul>
-		</div>
-		{% endif %}{% endwith %}
-		<ol>
-			{% for link in links%}
-			<li>
-				<a href={{link[2]}}>{{link[1]}}</a>
-			</li>
-			{% endfor %}
-		</ol>
-	</body>
-</html>
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+<p>To add new link <a href="{{url_for('submit_link')}}">Click here</a></p>
+
+<ol>
+	{% for link in links%}
+	<li>
+		<a href={{link[2]}}>{{link[1]}}</a>
+	</li>
+	{% endfor %}
+</ol>
+
+{% endblock %}
