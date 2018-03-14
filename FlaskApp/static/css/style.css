@@ -1,5 +1,10 @@
 
+#title{
+	font-size: 100px;
+	color :black ;
+	font-family: 'Lobster', cursive;
 
+}
 body {
   overflow-x: hidden;
 }
