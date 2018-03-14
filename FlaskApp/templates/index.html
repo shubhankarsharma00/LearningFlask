@@ -19,13 +19,19 @@
 		<p>To add new link <a href="{{url_for('submit_link')}}">Click here</a></p>
 		{% with messages = get_flashed_messages() %}{% if messages %}
 		<div class="flash">
-			<!-- TODO fix indentation -->
 			<ul class=flashes>
-		    {% for message in messages %}
-			      <li>{{ message }}</li>
-    {% endfor %}
-    </ul>
+			{% for message in messages %}
+				<li>{{ message }}</li>
+			{% endfor %}
+		    </ul>
 		</div>
 		{% endif %}{% endwith %}
+		<ol>
+			{% for link in links%}
+			<li>
+				<a href={{link[2]}}>{{link[1]}}</a>
+			</li>
+			{% endfor %}
+		</ol>
 	</body>
 </html>
