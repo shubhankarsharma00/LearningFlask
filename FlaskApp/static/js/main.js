@@ -11,3 +11,4 @@ $(start);
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
     });
+    $('.flashes').fadeOut(4000)

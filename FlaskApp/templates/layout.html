@@ -9,8 +9,8 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 		 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 		
-		<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}"
-		type="text/css" media="screen" charset="utf-8">
+        <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}"
+        type="text/css" media="screen" charset="utf-8">
 	</head>
 	<body>
 
@@ -45,7 +45,7 @@
 		 	 	<div id="page-content-wrapper">
            		<div class="container-fluid">
                 <h1 id = "title">Hi There!!</h1>
-                <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
+                <p id = "para1">This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
                 <p>Make sure to keep all page content within the </p>
                 {% block content %}{% endblock %}<br>
                 <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Toggle Menu</a>
@@ -55,10 +55,15 @@
 
 		{% include "flash_messages.html" %}
 		</div>
-		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"  crossorigin="anonymous"></script>
+		<script
+              src="https://code.jquery.com/jquery-3.3.1.js"
+              integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+              crossorigin="anonymous"></script>
+        
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
 <script src="{{url_for('static',filename='js/main.js')}}" charset="utf-8"></script>
+
 
 	</body>
 </html>
